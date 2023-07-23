@@ -1,15 +1,15 @@
 ﻿import React from "react";
 import {Todo} from "../todo/todo";
 import styles from './todo-list.module.scss';
-import {useHttp} from "../../utils/hooks/UseHttp";
 import {TodosPaginatedResponseModel} from "../../models/todos-paginated-response.model";
+import {useHttpEffect} from "../../utils/hooks/UseHttpEffect";
 
 interface TodoListProps {
   searchString: string
 }
 
 export const TodoList = ({searchString}: TodoListProps) => {
-  const [todosResponse, todosErr, todosState] = useHttp<TodosPaginatedResponseModel>({
+  const [todosResponse, todosErr, todosState] = useHttpEffect<TodosPaginatedResponseModel>({
     url:'https://dummyjson.com/todos'
   }, []);
   
