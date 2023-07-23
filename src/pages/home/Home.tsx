@@ -9,7 +9,7 @@ export const Home = () => {
       <h1>ToDos</h1>
       <Search searchString={search} onSearchChange={(str) => setSearch(str)}/>
       <hr/>
-      <TodoList/>
+      <TodoList searchString={search}/>
     </>
   )
 }
